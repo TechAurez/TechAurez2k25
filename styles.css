@@ -58,7 +58,26 @@ body {
   margin: 0;
   cursor: pointer;
   font-weight: normal;
+  
 }
+.typing-text {
+  border-right: 3px solid goldenrod; /* blinking cursor */
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  color: goldenrod;
+}
+
+/* cursor blink */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.typing-text {
+  animation: blink 0.7s infinite;
+}
+
 
 /* main content */
 .main {
@@ -412,6 +431,6 @@ body {
   color: white;
   margin-top: 0;
   font-family: 'eras', sans-serif;
-  font-size: clamp(10px, 3vw, 24px);   /* responsive font size */
+  font-size: clamp(10px, 3vw, 24px);  
   letter-spacing: clamp(3px, 3vw, 20px); /* responsive spacing */
 }
