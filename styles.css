@@ -113,7 +113,7 @@ body {
 
 /* Title Animation */
 .main-title {
-  margin-top: 7rem;
+
   font-size: clamp(1.5rem, 5vw, 2.5rem); 
   margin-bottom: 5px;
   font-family: 'handwriting', sans-serif;
@@ -141,6 +141,14 @@ body {
   opacity: 0;
   animation: fadeIn 1.2s ease-out forwards;
   animation-delay: 1s;
+}
+.dept-logo{
+  margin-bottom: 0rem !important;
+}
+@media (min-width: 768px) { 
+  .dept-logo {
+    margin-top: 6rem;
+  }
 }
 
 /* Animations */
