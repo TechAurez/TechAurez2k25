@@ -386,11 +386,12 @@ body {
 }
 .footer h1 {
   margin: 0;
-  font-size: 8rem;
+  font-size: clamp(1.8rem, 8vw, 8rem); /* min: 2.5rem, preferred: 10% of viewport width, max: 8rem */
   font-family: 'three', sans-serif;
   color: rgb(64, 49, 9);
   display: inline-block;
 }
+
 
 .footer h1 span {
   display: inline-block;
@@ -407,9 +408,10 @@ body {
   font-size: 16px;
   color: #666
 }
-.footer h4{
+.footer h4 {
   color: white;
   margin-top: 0;
   font-family: 'eras', sans-serif;
-  letter-spacing: 20px;
+  font-size: clamp(10px, 3vw, 24px);   /* responsive font size */
+  letter-spacing: clamp(3px, 3vw, 20px); /* responsive spacing */
 }
