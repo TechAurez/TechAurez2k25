@@ -311,7 +311,8 @@ body {
   display: flex;
   flex-direction: column; /* default: stack on mobile */
   gap: 2rem;
-  margin: 1rem;
+  /* margin: 0.1rem; */
+  padding: 1rem;
   
 }
 
