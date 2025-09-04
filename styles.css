@@ -58,6 +58,15 @@ body {
   font-size: 24px;
   font-weight: bold;
 }
+.resize {
+    font-size: clamp(8px, 3vw, 16px);  
+}
+
+@media (max-width: 768px) { 
+  .resize {
+    margin-top: 1rem;
+  }
+}
 .nav-right {
   display: flex;
   gap: 20px;
