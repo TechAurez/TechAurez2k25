@@ -10,9 +10,17 @@
   font-family: 'three';
   src: url('fonts/third.otf') format('truetype');
 }
+@font-face {
+  font-family: 'main';
+  src: url('fonts/main.otf') format('truetype');
+}
+
+
 body {
   margin: 0;
   padding: 0; 
+  font-family: 'main', sans-serif;
+ 
 }
 
 .master{
@@ -30,7 +38,7 @@ body {
   align-items: center;
   padding: 10px 20px;
   background-color: #f0f0f061;
-  border-radius: 10px; /* Example background */
+  border-radius: 10px; 
   z-index: 99;
   width: 96%;
   backdrop-filter: blur(5px);
@@ -39,10 +47,10 @@ body {
 .nav-left {
   display: flex;
   align-items: center;
-  gap: 10px; /* space between logo and college name */
+  gap: 10px;
 }
 .nav-left img {
-  height: 40px; /* Set an appropriate logo height */
+  height: 40px; 
   width: auto;
 }
 .nav-left h1 {
@@ -54,14 +62,20 @@ body {
   display: flex;
   gap: 20px;
 }
-.nav-right h3 {
-  margin: 0;
-  cursor: pointer;
-  font-weight: normal;
-  
+.about-link {
+  color: inherit;             
+  text-decoration: none;      
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
+
+.about-link:hover {
+  color: rgb(170, 128, 23);            
+
+}
+
+
 .typing-text {
-  border-right: 3px solid goldenrod; /* blinking cursor */
+  border-right: 3px solid goldenrod; 
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
@@ -79,20 +93,19 @@ body {
 }
 
 
-/* main content */
 .main {
   display: flex;
-  flex-direction: column; /* stack title & image vertically */
-  justify-content: center; /* vertical center */
-  align-items: center; /* horizontal center */
-  min-height: 80vh; /* full viewport height */
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  min-height: 80vh; 
   text-align: center;
 }
 
 /* Title Animation */
 .main-title {
   margin-top: 7rem;
-  font-size: clamp(1.5rem, 5vw, 2.5rem); /* scales between 24px and 40px */
+  font-size: clamp(1.5rem, 5vw, 2.5rem); 
   margin-bottom: 5px;
   font-family: 'handwriting', sans-serif;
   padding: 20px;
@@ -102,9 +115,9 @@ body {
 
 /* Logo Animation */
 .main img {
-  max-height: 500px;   /* keeps large size on desktop */
-  width: auto;         /* scales with container */
-  height: auto;        /* prevents stretching */
+  max-height: 500px;  
+  width: auto;        
+  height: auto;       
   opacity: 0;
   animation: zoomIn 1s ease-out forwards;
   animation-delay: 0.5s;
@@ -115,7 +128,7 @@ body {
 .main h4 {
   font-family: 'eras', sans-serif;
   letter-spacing: 6px;
-  font-size: clamp(1rem, 3vw, 1.5rem); /* scales with screen */
+  font-size: clamp(1rem, 3vw, 1.5rem); 
   opacity: 0;
   animation: fadeIn 1.2s ease-out forwards;
   animation-delay: 1s;
@@ -172,12 +185,10 @@ body {
   border-radius: 30px;
   cursor: pointer;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-
-  /* Animation setup */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: pulse 2s infinite;
   overflow: hidden;
-  z-index: 1; /* Keep text above pseudo-elements */
+  z-index: 1; 
 }
 
 /* Hover effect */
@@ -197,7 +208,7 @@ body {
   border-radius: 30px;
   background: linear-gradient(90deg, #000000, #ffd590, #ffa200);
   background-size: 300% 300%;
-  z-index: -2; /* Behind everything */
+  z-index: -2; 
   animation: neonBorder 3s linear infinite;
 }
 
@@ -206,8 +217,8 @@ body {
   position: absolute;
   inset: 2px;
   border-radius: 30px;
-  background: linear-gradient(45deg, #2a2a2a, #a5a5a5); /* Same as button */
-  z-index: -1; /* Behind text, above border */
+  background: linear-gradient(45deg, #2a2a2a, #a5a5a5); 
+  z-index: -1; 
 }
 
 /* Keyframes for neon border movement */
@@ -241,7 +252,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem; /* space between blocks */
+  gap: 2rem;
   padding: 20px;
   font-family: Arial, sans-serif;
 }
@@ -260,7 +271,7 @@ body {
 }
 
 .card:nth-child(2) {
-  animation-delay: 0.3s; /* staggered effect */
+  animation-delay: 0.3s; 
 }
 
 .card:hover {
@@ -297,7 +308,7 @@ body {
 }
 
 .video-wrapper {
-  width: 50px;   /* set circle size */
+  width: 50px;  
   height: 50px;
   border-radius: 50%;
   overflow: hidden;
@@ -307,7 +318,7 @@ body {
 .video-wrapper video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* ensures video fills the circle */
+  object-fit: cover; 
   display: block;
 }
 .alligment{
@@ -328,16 +339,15 @@ body {
 .video-wrapper-main {
   position: relative;
   display: flex;
-  flex-direction: column; /* default: stack on mobile */
+  flex-direction: column; 
   gap: 2rem;
-  /* margin: 0.1rem; */
   padding: 1rem;
   
 }
 
-@media (min-width: 992px) { /* large screens */
+@media (min-width: 992px) { 
   .video-wrapper-main {
-    flex-direction: row; /* side by side */
+    flex-direction: row; 
     gap: 5rem;
   }
 }
@@ -351,9 +361,9 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  opacity: 0.3; /* make text more readable */
+  opacity: 0.3; 
   pointer-events: none;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0px 30px rgb(0, 0, 0);
 }
 
 .left-side {
@@ -380,13 +390,13 @@ body {
 
 .gapmaking h1 {
   color: goldenrod;
-  font-size: clamp(28px, 5vw, 48px); /* responsive */
+  font-size: clamp(28px, 5vw, 48px); 
   margin-bottom: 10px;
   font-family: 'three', sans-serif;
 }
 
 .gapmaking p {
-  font-size: clamp(14px, 2vw, 20px); /* responsive */
+  font-size: clamp(14px, 2vw, 20px); 
   line-height: 1.6;
   max-width: 600px;
   color: rgb(143, 108, 21);
@@ -405,7 +415,7 @@ body {
 }
 .footer h1 {
   margin: 0;
-  font-size: clamp(1.8rem, 8vw, 8rem); /* min: 2.5rem, preferred: 10% of viewport width, max: 8rem */
+  font-size: clamp(1.8rem, 8vw, 8rem);
   font-family: 'three', sans-serif;
   color: rgb(64, 49, 9);
   display: inline-block;
@@ -424,7 +434,7 @@ body {
 
 .footer p {
   margin: 0;
-  font-size: clamp(8px, 2vw, 18px);   /* responsive font size */
+  font-size: clamp(8px, 2vw, 18px);   
   color: #666
 }
 .footer h4 {
@@ -432,5 +442,5 @@ body {
   margin-top: 0;
   font-family: 'eras', sans-serif;
   font-size: clamp(10px, 3vw, 24px);  
-  letter-spacing: clamp(3px, 3vw, 20px); /* responsive spacing */
+  letter-spacing: clamp(3px, 3vw, 20px); 
 }
