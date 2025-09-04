@@ -1,0 +1,414 @@
+@font-face {
+  font-family: 'handwriting';
+  src: url('fonts/handwrite.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'eras';
+  src: url('fonts/ERASMD.TTF') format('truetype');
+}
+@font-face {
+  font-family: 'three';
+  src: url('fonts/third.otf') format('truetype');
+}
+body {
+  margin: 0;
+  padding: 0; 
+}
+
+.master{
+  background-image: url(background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0px;
+  padding: 0px;
+}
+.nav {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f0f0f061;
+  border-radius: 10px; /* Example background */
+  z-index: 99;
+  width: 96%;
+  backdrop-filter: blur(5px);
+  margin-top: 0.4rem;
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between logo and college name */
+}
+.nav-left img {
+  height: 40px; /* Set an appropriate logo height */
+  width: auto;
+}
+.nav-left h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+.nav-right {
+  display: flex;
+  gap: 20px;
+}
+.nav-right h3 {
+  margin: 0;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+/* main content */
+.main {
+  display: flex;
+  flex-direction: column; /* stack title & image vertically */
+  justify-content: center; /* vertical center */
+  align-items: center; /* horizontal center */
+  min-height: 80vh; /* full viewport height */
+  text-align: center;
+}
+
+/* Title Animation */
+.main-title {
+  margin-top: 7rem;
+  font-size: clamp(1.5rem, 5vw, 2.5rem); /* scales between 24px and 40px */
+  margin-bottom: 5px;
+  font-family: 'handwriting', sans-serif;
+  padding: 20px;
+  opacity: 0;
+  animation: fadeInDown 1s ease-out forwards;
+}
+
+/* Logo Animation */
+.main img {
+  max-height: 500px;   /* keeps large size on desktop */
+  width: auto;         /* scales with container */
+  height: auto;        /* prevents stretching */
+  opacity: 0;
+  animation: zoomIn 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+
+/* Subtitle ("Proudly Present") Animation */
+.main h4 {
+  font-family: 'eras', sans-serif;
+  letter-spacing: 6px;
+  font-size: clamp(1rem, 3vw, 1.5rem); /* scales with screen */
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out forwards;
+  animation-delay: 1s;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* register button */
+.reg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-btn {
+  position: relative;
+  padding: 12px 28px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(45deg, #2a2a2a, #a5a5a5);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+  /* Animation setup */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: pulse 2s infinite;
+  overflow: hidden;
+  z-index: 1; /* Keep text above pseudo-elements */
+}
+
+/* Hover effect */
+.register-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Neon border effect */
+.register-btn::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  border-radius: 30px;
+  background: linear-gradient(90deg, #000000, #ffd590, #ffa200);
+  background-size: 300% 300%;
+  z-index: -2; /* Behind everything */
+  animation: neonBorder 3s linear infinite;
+}
+
+.register-btn::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #2a2a2a, #a5a5a5); /* Same as button */
+  z-index: -1; /* Behind text, above border */
+}
+
+/* Keyframes for neon border movement */
+@keyframes neonBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* date and time */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* space between blocks */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  background: #f9f9f9;
+  padding: 15px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 1;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.3s; /* staggered effect */
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  background: #e0e0e0;
+}
+
+/* animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.all{
+  text-align: center;
+  font-family: 'three', sans-serif;
+  letter-spacing: 4px;
+  font-size: 24px;
+  color: #333;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 12px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: fit-content;
+}
+
+.video-wrapper {
+  width: 50px;   /* set circle size */
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ensures video fills the circle */
+  display: block;
+}
+.alligment{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.fon{
+  font-family: 'three', sans-serif;
+}
+
+
+/* <!-- viedo --> */
+
+
+
+.video-wrapper-main {
+  position: relative;
+  display: flex;
+  flex-direction: column; /* default: stack on mobile */
+  gap: 2rem;
+  margin: 1rem;
+  
+}
+
+@media (min-width: 992px) { /* large screens */
+  .video-wrapper-main {
+    flex-direction: row; /* side by side */
+    gap: 5rem;
+  }
+}
+
+.bg-video {
+  position: absolute;
+  border-radius: 1rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.3; /* make text more readable */
+  pointer-events: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.left-side {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.left-side video {
+  width: 100%;
+  height: auto;
+  border-radius: 2rem;
+}
+
+.right-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  color: white;
+  border-left: goldenrod 2px solid;
+  padding-left: 1rem;
+}
+
+.gapmaking h1 {
+  color: goldenrod;
+  font-size: clamp(28px, 5vw, 48px); /* responsive */
+  margin-bottom: 10px;
+  font-family: 'three', sans-serif;
+}
+
+.gapmaking p {
+  font-size: clamp(14px, 2vw, 20px); /* responsive */
+  line-height: 1.6;
+  max-width: 600px;
+  color: rgb(143, 108, 21);
+}
+
+
+
+
+/* fotter */
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #000000;
+  border-radius: 10px; 
+}
+.footer h1 {
+  margin: 0;
+  font-size: 8rem;
+  font-family: 'three', sans-serif;
+  color: rgb(64, 49, 9);
+  display: inline-block;
+}
+
+.footer h1 span {
+  display: inline-block;
+  transition: color 0.1s ease;
+  cursor: pointer; 
+}
+
+.footer h1 span:hover {
+  color: goldenrod;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 16px;
+  color: #666
+}
+.footer h4{
+  color: white;
+  margin-top: 0;
+  font-family: 'eras', sans-serif;
+  letter-spacing: 20px;
+}
