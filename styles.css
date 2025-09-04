@@ -405,7 +405,7 @@ body {
 
 .footer p {
   margin: 0;
-  font-size: 16px;
+  font-size: clamp(8px, 2vw, 18px);   /* responsive font size */
   color: #666
 }
 .footer h4 {
