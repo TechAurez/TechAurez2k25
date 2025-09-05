@@ -107,7 +107,7 @@ body {
   flex-direction: column;
   justify-content: center; 
   align-items: center; 
-  min-height: 80vh; 
+  min-height: 60vh; 
   text-align: center;
 }
 
@@ -460,4 +460,11 @@ body {
   font-family: 'eras', sans-serif;
   font-size: clamp(10px, 3vw, 24px);  
   letter-spacing: clamp(3px, 3vw, 20px); 
+}
+
+  /* <!-- technical events  --> */
+
+.technical-events img {
+  max-width: 30vh;
+  height: auto;
 }
