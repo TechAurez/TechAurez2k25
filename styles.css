@@ -145,7 +145,7 @@ body {
 .dept-logo{
   margin-bottom: 0rem !important;
 }
-@media (min-width: 768px) { 
+@media (max-width: 768px) { 
   .dept-logo {
     margin-top: 6rem;
   }
