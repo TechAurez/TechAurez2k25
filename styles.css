@@ -549,17 +549,40 @@ body {
 }
 .join-btn {
   display: inline-block;
-  padding: 12px 24px;
-  background: goldenrod;
-  color: white;
-  font-weight: bold;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-family: 'Press Start 2P', cursive; /* retro pixel font */
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
   text-decoration: none;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
+  border: 4px solid #000;
+  border-radius: 0; /* keep sharp retro corners */
+  box-shadow: 4px 4px 0px #000;
+  transition: all 0.2s ease-in-out;
 }
 
 .join-btn:hover {
-  background: darkgoldenrod;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000;
+}
+.join-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 1px 1px 0px #000;
+}
+
+.join-btn-col-link-it-up{
+  background: linear-gradient(135deg,  #73ecf0c8, #fc59ffbd);
+}
+.join-btn-col-link-it-up:hover {
+  background: linear-gradient(135deg, #2c5f60c8, #531d54bd);
+}
+
+
+.join-btn-col-breakaway{
+  background-color: #000;
+  color: rgb(210, 255, 255);
+}
+
+.non-tech-col{
+    background: linear-gradient(135deg, #f8f8f8, #7d688d, rgb(48, 5, 77));
 }
